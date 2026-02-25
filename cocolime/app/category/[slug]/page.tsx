@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { use, useState } from 'react'
 import { SlidersHorizontal } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { productsApi } from '@/lib/api/products'
@@ -19,9 +19,10 @@ const SORT_OPTIONS = [
   { value: 'rating', label: 'Top Rated' },
 ]
 
-export default function CategoryPage({ params }: { params: { slug: string } }) {
+export default function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params)
   const [filters, setFilters] = useState<ProductFilters>({
-    category: params.slug,
+    category: slug,
     sort: 'newest',
     page: 1,
     limit: 24,
@@ -33,7 +34,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
     queryFn: () => productsApi.list(filters),
   })
 
-  const categoryName = params.slug.charAt(0).toUpperCase() + params.slug.slice(1).replace(/-/g, ' ')
+  const categoryName = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')
 
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8">
