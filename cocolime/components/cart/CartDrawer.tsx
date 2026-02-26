@@ -192,7 +192,7 @@ export function CartDrawer() {
             </div>
 
             <p className="text-center text-xs text-stone-400">
-              Free shipping on orders over £50
+              Free shipping on orders over SAR 200
             </p>
           </div>
         )}

@@ -22,7 +22,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Beauty of Joseon',
     price: 1490,
     compare_at_price: 2200,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1607602878030-eb70a90f8090?w=600&q=80', alt: 'Beauty of Joseon Relief Sun SPF50+', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1631159562830-7e5e1e1dfe55?w=600&q=80', alt: 'Beauty of Joseon Relief Sun texture', position: 1 },
@@ -44,7 +44,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Beauty of Joseon',
     price: 1450,
     compare_at_price: 2200,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80', alt: 'Beauty of Joseon Eye Serum', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1570194065650-d99fb4b38a18?w=600&q=80', alt: 'Eye serum dropper', position: 1 },
@@ -66,7 +66,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Beauty of Joseon',
     price: 1390,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1547032889-81d21e98800d?w=600&q=80', alt: 'Glow Serum with dropper', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80', alt: 'Glow serum bottle', position: 1 },
@@ -88,7 +88,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Beauty of Joseon',
     price: 1790,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=600&q=80', alt: 'Dynasty Cream jar', position: 0 },
     ],
@@ -111,7 +111,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'COSRX',
     price: 1850,
     compare_at_price: 2500,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1631159562830-7e5e1e1dfe55?w=600&q=80', alt: 'COSRX Snail Essence bottle', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1570194065650-d99fb4b38a18?w=600&q=80', alt: 'COSRX Snail Essence texture', position: 1 },
@@ -133,7 +133,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'COSRX',
     price: 1190,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80', alt: 'COSRX Gel Cleanser tube', position: 0 },
     ],
@@ -154,7 +154,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'COSRX',
     price: 1350,
     compare_at_price: 1800,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1619451683800-9427b7f2fdcb?w=600&q=80', alt: 'COSRX Moisturizing Lotion', position: 0 },
     ],
@@ -175,7 +175,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'COSRX',
     price: 1250,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80', alt: 'COSRX Salicylic Cleanser', position: 0 },
     ],
@@ -198,7 +198,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'The Ordinary',
     price: 790,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1547032889-81d21e98800d?w=600&q=80', alt: 'The Ordinary HA serum dropper', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1631159562830-7e5e1e1dfe55?w=600&q=80', alt: 'The Ordinary serums', position: 1 },
@@ -220,7 +220,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'The Ordinary',
     price: 590,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1570194065650-d99fb4b38a18?w=600&q=80', alt: 'The Ordinary Niacinamide', position: 0 },
     ],
@@ -241,7 +241,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'The Ordinary',
     price: 590,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80', alt: 'The Ordinary Retinol', position: 0 },
     ],
@@ -262,7 +262,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'The Ordinary',
     price: 790,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1630462671547-16da68f0d7ce?w=600&q=80', alt: 'The Ordinary Peeling Solution', position: 0 },
     ],
@@ -285,7 +285,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'CeraVe',
     price: 1090,
     compare_at_price: 1490,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80', alt: 'CeraVe Hydrating Cleanser', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1619451683800-9427b7f2fdcb?w=600&q=80', alt: 'CeraVe cleanser texture', position: 1 },
@@ -307,7 +307,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'CeraVe',
     price: 1290,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=600&q=80', alt: 'CeraVe Moisturising Cream jar', position: 0 },
     ],
@@ -328,7 +328,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'CeraVe',
     price: 1590,
     compare_at_price: 1990,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1607602878030-eb70a90f8090?w=600&q=80', alt: 'CeraVe AM SPF50 moisturiser', position: 0 },
     ],
@@ -351,7 +351,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'La Roche-Posay',
     price: 1690,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80', alt: 'La Roche-Posay Effaclar Gel', position: 0 },
     ],
@@ -372,7 +372,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'La Roche-Posay',
     price: 2090,
     compare_at_price: 2600,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1619451683800-9427b7f2fdcb?w=600&q=80', alt: 'La Roche-Posay Toleriane moisturiser', position: 0 },
     ],
@@ -393,7 +393,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'La Roche-Posay',
     price: 2490,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1607602878030-eb70a90f8090?w=600&q=80', alt: 'La Roche-Posay Anthelios SPF50+', position: 0 },
     ],
@@ -416,7 +416,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Anua',
     price: 1690,
     compare_at_price: 2200,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80', alt: 'Anua Heartleaf Toner', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1570194065650-d99fb4b38a18?w=600&q=80', alt: 'Anua toner on skin', position: 1 },
@@ -438,7 +438,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Anua',
     price: 1990,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1556228578-0d85909764b2?w=600&q=80', alt: 'Anua Cleansing Oil', position: 0 },
     ],
@@ -461,7 +461,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'AXIS-Y',
     price: 2890,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1547032889-81d21e98800d?w=600&q=80', alt: 'AXIS-Y Glow Serum dropper', position: 0 },
       { id: 'i2', url: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80', alt: 'AXIS-Y serum bottle', position: 1 },
@@ -485,7 +485,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Nacific',
     price: 1990,
     compare_at_price: 2800,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1631159562830-7e5e1e1dfe55?w=600&q=80', alt: 'Nacific Niacin Essence', position: 0 },
     ],
@@ -506,7 +506,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Nacific',
     price: 1590,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80', alt: 'Nacific Rose Toner', position: 0 },
     ],
@@ -529,7 +529,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Bioderma',
     price: 1490,
     compare_at_price: 1990,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80', alt: 'Bioderma Sensibio H2O bottle', position: 0 },
     ],
@@ -550,7 +550,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Bioderma',
     price: 1190,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80', alt: 'Bioderma Hydrabio H2O', position: 0 },
     ],
@@ -573,7 +573,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'K-Secret',
     price: 2190,
     compare_at_price: 2750,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1547032889-81d21e98800d?w=600&q=80', alt: 'K-Secret Seoul 1988 Serum', position: 0 },
     ],
@@ -596,7 +596,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: "I'm Sorry For My Skin",
     price: 1230,
     compare_at_price: 2590,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1570194065650-d99fb4b38a18?w=600&q=80', alt: 'Honey Beam Ampoule bottle', position: 0 },
     ],
@@ -619,7 +619,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Some By Mi',
     price: 1490,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80', alt: 'Some By Mi Miracle Toner', position: 0 },
     ],
@@ -640,7 +640,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Some By Mi',
     price: 2190,
     compare_at_price: 2900,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80', alt: 'Some By Mi Retinol Serum', position: 0 },
     ],
@@ -663,7 +663,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Isntree',
     price: 1890,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1607602878030-eb70a90f8090?w=600&q=80', alt: 'Isntree Watery Sun Gel', position: 0 },
     ],
@@ -684,7 +684,7 @@ const ALL_PRODUCTS: (ProductListItem & {
     brand: 'Isntree',
     price: 1490,
     compare_at_price: null,
-    currency: 'GBP',
+    currency: 'SAR',
     images: [
       { id: 'i1', url: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80', alt: 'Isntree Centella Toner', position: 0 },
     ],

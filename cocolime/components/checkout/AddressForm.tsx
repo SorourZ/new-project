@@ -4,15 +4,16 @@ import { useFormContext } from 'react-hook-form'
 import { Input } from '@/components/ui/Input'
 
 const COUNTRIES = [
+  { code: 'SA', name: 'Saudi Arabia' },
+  { code: 'AE', name: 'United Arab Emirates' },
+  { code: 'KW', name: 'Kuwait' },
+  { code: 'BH', name: 'Bahrain' },
+  { code: 'QA', name: 'Qatar' },
+  { code: 'OM', name: 'Oman' },
+  { code: 'JO', name: 'Jordan' },
+  { code: 'EG', name: 'Egypt' },
   { code: 'GB', name: 'United Kingdom' },
   { code: 'US', name: 'United States' },
-  { code: 'CA', name: 'Canada' },
-  { code: 'AU', name: 'Australia' },
-  { code: 'DE', name: 'Germany' },
-  { code: 'FR', name: 'France' },
-  { code: 'IT', name: 'Italy' },
-  { code: 'ES', name: 'Spain' },
-  { code: 'NL', name: 'Netherlands' },
 ]
 
 interface AddressFormProps {
@@ -74,9 +75,10 @@ export function AddressForm({ prefix = 'shipping_address' }: AddressFormProps) {
           {...register(field('city'))}
         />
         <Input
-          label="Postcode / ZIP"
+          label="Postal code"
           autoComplete="postal-code"
           required
+          placeholder="e.g. 11564"
           error={err(`${prefix}.postcode`)}
           {...register(field('postcode'))}
         />
@@ -89,7 +91,7 @@ export function AddressForm({ prefix = 'shipping_address' }: AddressFormProps) {
         <select
           {...register(field('country'))}
           className="w-full px-4 py-3 rounded-lg border border-stone-200 text-sm text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-[--color-brand-primary] focus:border-transparent hover:border-stone-300 transition-all"
-          defaultValue="GB"
+          defaultValue="SA"
         >
           <option value="" disabled>Select country</option>
           {COUNTRIES.map((c) => (
@@ -105,6 +107,7 @@ export function AddressForm({ prefix = 'shipping_address' }: AddressFormProps) {
         label="Phone (optional)"
         type="tel"
         autoComplete="tel"
+        placeholder="+966 5X XXX XXXX"
         error={err(`${prefix}.phone`)}
         hint="For delivery updates only"
         {...register(field('phone'))}

@@ -61,9 +61,9 @@
   --color-info:          #2563EB;
   --color-info-light:    #DBEAFE;
 
-  /* Production: use next/font/google or self-hosted fonts for --font-display and --font-body */
-  --font-display: 'Playfair Display', 'Didot', 'Bodoni MT', Georgia, 'Times New Roman', serif;
-  --font-body:    'DM Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Fonts injected via next/font/google CSS variables in layout.tsx */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'Jost', ui-sans-serif, system-ui, sans-serif;
 
   --shadow-card: 0 2px 20px rgba(0,0,0,0.05);
   --shadow-lg:   0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
@@ -79,7 +79,7 @@
 
 @layer base {
   html {
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -88,7 +88,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4 {
@@ -96,6 +96,11 @@
     font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.01em;
+  }
+
+  /* Small UI text — labels, nav links, badges */
+  nav, label, button, input, select, textarea, small, .ui-text {
+    font-family: var(--font-body);
   }
 
   :focus-visible {

@@ -147,7 +147,7 @@ export default function CartPage() {
               </Button>
             </Link>
 
-            <p className="text-center text-xs text-stone-400 mt-3">Free shipping on orders over £50</p>
+            <p className="text-center text-xs text-stone-400 mt-3">Free shipping on orders over SAR 200</p>
           </div>
         </div>
       </div>

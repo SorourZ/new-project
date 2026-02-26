@@ -34,9 +34,9 @@ export default function ContactPage() {
         <div className="space-y-6">
           {[
             { title: 'Email', value: 'hello@cocolime.com' },
-            { title: 'Hours', value: 'Mon–Fri, 9am–5pm GMT' },
+            { title: 'Hours', value: 'Sun–Thu, 9am–6pm AST' },
             { title: 'Returns', value: '30-day hassle-free returns' },
-            { title: 'Delivery', value: 'UK orders in 3–5 days' },
+            { title: 'Delivery', value: 'Saudi Arabia: 2–4 business days' },
           ].map((item) => (
             <div key={item.title}>
               <p className="text-xs font-semibold tracking-wider uppercase text-stone-400 mb-1">{item.title}</p>
