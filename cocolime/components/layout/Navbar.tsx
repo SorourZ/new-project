@@ -8,6 +8,7 @@ import { useUIStore } from '@/lib/store/uiStore'
 import { cn } from '@/lib/utils/cn'
 import { MegaMenu } from './MegaMenu'
 import { MobileNav } from './MobileNav'
+import { LogoWordmark, LogoCL } from '@/components/ui/Logo'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -43,12 +44,14 @@ export function Navbar() {
               {mobileNavOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
 
-            {/* Logo */}
-            <Link
-              href="/"
-              className="flex-shrink-0 font-[family-name:var(--font-playfair)] text-2xl font-medium tracking-tight text-stone-900"
-            >
-              Cocolime
+            {/* Logo — wordmark on desktop, CL icon on mobile */}
+            <Link href="/" aria-label="Cocolime – home" className="flex-shrink-0">
+              <span className="hidden lg:block text-xl">
+                <LogoWordmark />
+              </span>
+              <span className="lg:hidden">
+                <LogoCL size={34} />
+              </span>
             </Link>
 
             {/* Desktop nav */}

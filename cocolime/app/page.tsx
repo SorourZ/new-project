@@ -8,10 +8,34 @@ export const metadata: Metadata = {
 }
 
 const FEATURED_CATEGORIES = [
-  { label: 'Skincare', slug: 'skincare', desc: 'Serums, moisturisers & more', color: 'from-rose-50 to-stone-50' },
-  { label: 'Makeup', slug: 'makeup', desc: 'Face, eyes & lips', color: 'from-amber-50 to-stone-50' },
-  { label: 'Haircare', slug: 'haircare', desc: 'Nourish & strengthen', color: 'from-emerald-50 to-stone-50' },
-  { label: 'Fragrance', slug: 'fragrance', desc: 'Find your signature scent', color: 'from-purple-50 to-stone-50' },
+  {
+    label: 'Skincare',
+    slug: 'skincare',
+    desc: 'Serums, moisturisers & more',
+    bg: 'var(--color-cat-skincare-bg)',
+    accent: 'var(--color-cat-skincare)',
+  },
+  {
+    label: 'Makeup',
+    slug: 'makeup',
+    desc: 'Face, eyes & lips',
+    bg: 'var(--color-cat-makeup-bg)',
+    accent: 'var(--color-cat-makeup)',
+  },
+  {
+    label: 'Haircare',
+    slug: 'haircare',
+    desc: 'Nourish & strengthen',
+    bg: 'var(--color-cat-haircare-bg)',
+    accent: 'var(--color-cat-haircare)',
+  },
+  {
+    label: 'Fragrance',
+    slug: 'fragrance',
+    desc: 'Find your signature scent',
+    bg: 'var(--color-cat-fragrance-bg)',
+    accent: 'var(--color-cat-fragrance)',
+  },
 ]
 
 const BRAND_VALUES = [
@@ -32,7 +56,7 @@ export default function HomePage() {
             </p>
             <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl lg:text-7xl font-medium text-stone-900 leading-[1.05] mb-6">
               Beauty that<br />
-              <em className="not-italic" style={{ color: 'var(--color-brand-highlight)' }}>speaks</em> for itself.
+              <em className="not-italic" style={{ color: 'var(--color-brand-primary)' }}>speaks</em> for itself.
             </h1>
             <p className="text-lg text-stone-600 leading-relaxed mb-8 max-w-[480px]">
               Premium formulations crafted with the finest ingredients. Because you deserve skincare that actually works.
@@ -40,9 +64,10 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/category/skincare"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-stone-900 text-white text-sm font-medium tracking-wider uppercase rounded-lg hover:bg-stone-700 transition-all hover:-translate-y-0.5 shadow-lg shadow-stone-900/20"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-white text-sm font-medium tracking-wider uppercase rounded-lg transition-all hover:-translate-y-0.5 shadow-lg"
+                style={{ background: 'var(--color-brand-primary)', boxShadow: '0 8px 24px color-mix(in srgb, var(--color-brand-primary) 40%, transparent)' }}
               >
-                Shop Skincare <ArrowRight size={15} />
+                Shop Now <ArrowRight size={15} />
               </Link>
               <Link
                 href="/about"
@@ -53,7 +78,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l pointer-events-none" style={{ backgroundImage: 'linear-gradient(to left, var(--color-brand-primary-light), transparent)' }} aria-hidden />
+        {/* Lime gradient blob on right */}
+        <div
+          className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none"
+          style={{ backgroundImage: 'linear-gradient(135deg, transparent 40%, var(--color-brand-primary-light) 100%)' }}
+          aria-hidden
+        />
         <div className="absolute -bottom-px left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" aria-hidden />
       </section>
 
@@ -74,12 +104,26 @@ export default function HomePage() {
             <Link
               key={cat.slug}
               href={`/category/${cat.slug}`}
-              className={`group relative aspect-[3/4] rounded-2xl bg-gradient-to-br ${cat.color} overflow-hidden border border-stone-100 hover:border-stone-200 transition-all hover:shadow-xl`}
+              className="group relative aspect-[3/4] rounded-2xl overflow-hidden border border-transparent hover:shadow-xl transition-all"
+              style={{ background: cat.bg }}
             >
+              {/* Accent bar at top */}
+              <div
+                className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
+                style={{ background: cat.accent }}
+              />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-[family-name:var(--font-playfair)] text-xl font-medium text-stone-900 mb-1">{cat.label}</h3>
+                <h3
+                  className="font-[family-name:var(--font-playfair)] text-xl font-medium mb-1"
+                  style={{ color: cat.accent }}
+                >
+                  {cat.label}
+                </h3>
                 <p className="text-sm text-stone-500">{cat.desc}</p>
-                <div className="flex items-center gap-1 mt-3 text-xs font-medium text-stone-600 group-hover:text-stone-900 transition-colors">
+                <div
+                  className="flex items-center gap-1 mt-3 text-xs font-semibold tracking-wide"
+                  style={{ color: cat.accent }}
+                >
                   Shop now <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
