@@ -3,11 +3,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Heart, ShoppingBag } from 'lucide-react'
+import { Heart, ShoppingBag, Plus } from 'lucide-react'
 import type { ProductListItem } from '@/types'
-import { formatPrice, calculateDiscount } from '@/lib/utils/currency'
+import { calculateDiscount } from '@/lib/utils/currency'
 import { useCart } from '@/lib/hooks/useCart'
 import { Badge } from '@/components/ui/Badge'
+import { SARSymbol } from '@/components/ui/SARSymbol'
 import { cn } from '@/lib/utils/cn'
 
 interface ProductCardProps {
@@ -107,21 +108,27 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             </div>
           )}
 
-          {/* Quick add overlay */}
-          <div className={cn(
-            'absolute bottom-0 left-0 right-0 p-3 transition-all duration-300',
-            hovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-          )}>
-            <button
-              onClick={handleAddToCart}
-              disabled={!product.in_stock || isAdding}
-              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-stone-900 text-white text-xs font-medium tracking-wider uppercase rounded-lg hover:bg-stone-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label={`Add ${product.name} to cart`}
-            >
-              <ShoppingBag size={13} aria-hidden />
-              {!product.in_stock ? 'Out of Stock' : 'Quick Add'}
-            </button>
-          </div>
+          {/* Add to cart — compact green icon button, bottom-right */}
+          <button
+            onClick={handleAddToCart}
+            disabled={!product.in_stock || isAdding}
+            className={cn(
+              'absolute bottom-3 right-3 w-9 h-9 rounded-xl flex items-center justify-center shadow-md transition-all duration-200',
+              product.in_stock
+                ? 'bg-emerald-400 hover:bg-emerald-500 active:scale-95'
+                : 'bg-stone-200 cursor-not-allowed',
+            )}
+            aria-label={`Add ${product.name} to cart`}
+          >
+            <span className="relative">
+              <ShoppingBag size={16} className="text-white" strokeWidth={2} />
+              <Plus
+                size={8}
+                className="text-white absolute -top-1 -right-1.5"
+                strokeWidth={3.5}
+              />
+            </span>
+          </button>
 
           {/* Wishlist */}
           <button
@@ -152,17 +159,21 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             <StarRating average={product.rating.average} count={product.rating.count} />
           )}
 
-          <div className="flex items-center gap-2 pt-0.5">
-            <span className="text-sm font-semibold text-stone-900">
-              {formatPrice(product.price, product.currency)}
+          <div className="flex items-center gap-2 pt-0.5 flex-wrap">
+            <span className="text-sm font-semibold text-stone-900 flex items-center gap-[3px]">
+              <SARSymbol size={12} />
+              {(product.price / 100).toFixed(2)}
             </span>
             {product.compare_at_price && product.compare_at_price > product.price && (
               <>
-                <span className="text-xs text-stone-400 line-through">
-                  {formatPrice(product.compare_at_price, product.currency)}
+                <span className="text-xs text-stone-400 line-through flex items-center gap-[2px]">
+                  <SARSymbol size={10} />
+                  {(product.compare_at_price / 100).toFixed(2)}
                 </span>
                 {discount > 0 && (
-                  <span className="text-xs text-red-600 font-medium">-{discount}%</span>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-pink-500 text-white leading-none">
+                    -{discount}%
+                  </span>
                 )}
               </>
             )}
