@@ -130,7 +130,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           <p className="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-2">
             {product.brand}
           </p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl text-stone-900 leading-tight mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl text-stone-900 leading-tight mb-4">
             {product.name}
           </h1>
 
@@ -260,7 +260,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       {/* Description */}
       {product.description && (
         <div className="mt-16 max-w-2xl">
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-4">About this product</h2>
+          <h2 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-4">About this product</h2>
           <div className="prose prose-stone text-stone-600 text-sm leading-relaxed">
             <p>{product.description}</p>
           </div>

@@ -28,7 +28,7 @@ function SearchResults() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-stone-900 mb-1">
+        <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-900 mb-1">
           Results for &ldquo;{q}&rdquo;
         </h1>
         {data?.pagination && (
@@ -39,7 +39,7 @@ function SearchResults() {
       {!isLoading && data?.data.length === 0 ? (
         <div className="text-center py-20">
           <SearchX size={48} className="text-stone-200 mx-auto mb-4" />
-          <h2 className="font-[family-name:var(--font-playfair)] text-xl text-stone-700 mb-2">
+          <h2 className="font-[family-name:var(--font-display)] text-xl text-stone-700 mb-2">
             No results for &ldquo;{q}&rdquo;
           </h2>
           <p className="text-sm text-stone-400 mb-6">Try a different search term or browse our categories.</p>

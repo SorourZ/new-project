@@ -13,7 +13,7 @@ export default function RegisterPage() {
     <div className="min-h-[calc(100vh-120px)] flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-[480px]">
         <div className="text-center mb-10">
-          <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-stone-900 mb-2">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-900 mb-2">
             Join Cocolime
           </h1>
           <p className="text-stone-500 text-sm">Create an account and start your beauty journey</p>

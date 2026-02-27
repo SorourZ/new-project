@@ -16,7 +16,7 @@ export default function OrderConfirmPage() {
         <CheckCircle2 size={32} className="text-green-600" />
       </div>
 
-      <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-stone-900 mb-3">
+      <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-900 mb-3">
         Thank you for your order!
       </h1>
       <p className="text-stone-500 mb-2">

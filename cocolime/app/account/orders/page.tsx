@@ -32,7 +32,7 @@ export default function OrdersPage() {
   if (isLoading) {
     return (
       <div className="space-y-4">
-        <h1 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-6">Order History</h1>
+        <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-6">Order History</h1>
         {[1,2,3].map(i => <Skeleton key={i} className="h-28 rounded-xl" />)}
       </div>
     )
@@ -42,7 +42,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <h1 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-6">Order History</h1>
+      <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-6">Order History</h1>
 
       {orders.length === 0 ? (
         <div className="text-center py-16">

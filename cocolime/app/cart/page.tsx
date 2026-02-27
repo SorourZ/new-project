@@ -25,7 +25,7 @@ export default function CartPage() {
     return (
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-24 text-center">
         <ShoppingBag size={64} className="text-stone-200 mx-auto mb-6" />
-        <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-stone-900 mb-3">Your cart is empty</h1>
+        <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-900 mb-3">Your cart is empty</h1>
         <p className="text-stone-500 mb-8">Discover beautiful products to fill it up.</p>
         <Link href="/category/skincare">
           <Button variant="primary" size="lg">Start Shopping</Button>
@@ -36,7 +36,7 @@ export default function CartPage() {
 
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-10">
-      <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-stone-900 mb-8">
+      <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-900 mb-8">
         Your Cart <span className="text-stone-400 font-normal text-2xl">({cart.item_count})</span>
       </h1>
 

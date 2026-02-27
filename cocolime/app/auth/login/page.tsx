@@ -13,7 +13,7 @@ export default function LoginPage() {
     <div className="min-h-[calc(100vh-120px)] flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-[440px]">
         <div className="text-center mb-10">
-          <h1 className="font-[family-name:var(--font-playfair)] text-3xl text-stone-900 mb-2">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-900 mb-2">
             Welcome back
           </h1>
           <p className="text-stone-500 text-sm">Sign in to your Cocolime account</p>

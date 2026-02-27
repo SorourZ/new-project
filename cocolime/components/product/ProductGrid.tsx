@@ -24,7 +24,7 @@ export function ProductGrid({ products, isLoading, skeletonCount = 12 }: Product
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center">
         <PackageSearch size={48} className="text-stone-200 mb-4" aria-hidden />
-        <h3 className="font-[family-name:var(--font-playfair)] text-xl text-stone-700 mb-2">
+        <h3 className="font-[family-name:var(--font-display)] text-xl text-stone-700 mb-2">
           No products found
         </h3>
         <p className="text-sm text-stone-400 max-w-xs">

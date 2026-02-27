@@ -54,7 +54,7 @@ export default function HomePage() {
             <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-5" style={{ color: 'var(--color-brand-muted)' }}>
               New Collection — Spring 2026
             </p>
-            <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl lg:text-7xl font-medium text-stone-900 leading-[1.05] mb-6">
+            <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-medium text-stone-900 leading-[1.05] mb-6">
               Beauty that<br />
               <em className="not-italic" style={{ color: 'var(--color-brand-primary)' }}>speaks</em> for itself.
             </h1>
@@ -92,7 +92,7 @@ export default function HomePage() {
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-xs font-semibold tracking-[0.15em] uppercase text-stone-400 mb-2">Explore</p>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl text-stone-900">Shop by Category</h2>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl text-stone-900">Shop by Category</h2>
           </div>
           <Link href="/products" className="text-sm text-stone-500 hover:text-stone-900 flex items-center gap-1 transition-colors">
             All products <ArrowRight size={14} />
@@ -114,7 +114,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
                 <h3
-                  className="font-[family-name:var(--font-playfair)] text-xl font-medium mb-1"
+                  className="font-[family-name:var(--font-display)] text-xl font-medium mb-1"
                   style={{ color: cat.accent }}
                 >
                   {cat.label}
@@ -154,7 +154,7 @@ export default function HomePage() {
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-xs font-semibold tracking-[0.15em] uppercase text-stone-400 mb-2">Most loved</p>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl text-stone-900">Bestsellers</h2>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl text-stone-900">Bestsellers</h2>
           </div>
           <Link href="/products?sort=bestselling" className="text-sm text-stone-500 hover:text-stone-900 flex items-center gap-1 transition-colors">
             View all <ArrowRight size={14} />
@@ -171,7 +171,7 @@ export default function HomePage() {
       <section className="bg-stone-900 py-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
           <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: 'var(--color-brand-primary)' }}>Stay connected</p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl text-white mb-3">Beauty, delivered to your inbox.</h2>
+          <h2 className="font-[family-name:var(--font-display)] text-3xl text-white mb-3">Beauty, delivered to your inbox.</h2>
           <p className="text-stone-400 mb-8 text-sm">New arrivals, expert tips and exclusive offers — no spam, ever.</p>
           <form className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
             <input

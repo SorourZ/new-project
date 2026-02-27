@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: 'Privacy Policy' }
 export default function PrivacyPage() {
   return (
     <div className="max-w-[760px] mx-auto px-4 py-16">
-      <h1 className="font-[family-name:var(--font-playfair)] text-4xl text-stone-900 mb-3">Privacy Policy</h1>
+      <h1 className="font-[family-name:var(--font-display)] text-4xl text-stone-900 mb-3">Privacy Policy</h1>
       <p className="text-sm text-stone-400 mb-10">Last updated: February 2026</p>
       <div className="prose prose-stone max-w-none text-stone-600 text-sm leading-relaxed space-y-6">
         <p>Cocolime Ltd (&ldquo;Cocolime&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is committed to protecting your personal data. This policy explains how we collect, use and safeguard your information when you use our website and services.</p>
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           { h: 'Contact', p: 'For privacy queries: privacy@cocolime.com · Cocolime Ltd, London, United Kingdom.' },
         ].map(({ h, p }) => (
           <section key={h}>
-            <h2 className="font-[family-name:var(--font-playfair)] text-xl text-stone-900 mb-2">{h}</h2>
+            <h2 className="font-[family-name:var(--font-display)] text-xl text-stone-900 mb-2">{h}</h2>
             <p>{p}</p>
           </section>
         ))}

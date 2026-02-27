@@ -59,7 +59,7 @@ export function CartDrawer() {
           {!cart || cart.items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full px-6 text-center">
               <ShoppingBag size={48} className="text-stone-200 mb-4" aria-hidden />
-              <p className="font-[family-name:var(--font-playfair)] text-lg text-stone-700 mb-2">
+              <p className="font-[family-name:var(--font-display)] text-lg text-stone-700 mb-2">
                 Your cart is empty
               </p>
               <p className="text-sm text-stone-400 mb-6">
