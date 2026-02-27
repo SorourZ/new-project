@@ -98,14 +98,13 @@ export default function AllProductsPage() {
         {/* Grid */}
         <div className="flex-1 min-w-0">
           <ProductGrid
-            products={data?.data}
+            products={data?.data ?? []}
             isLoading={isLoading}
-            emptyMessage="No products found."
           />
           {data?.pagination && data.pagination.total_pages > 1 && (
             <div className="mt-10">
               <Pagination
-                currentPage={filters.page ?? 1}
+                page={filters.page ?? 1}
                 totalPages={data.pagination.total_pages}
                 onPageChange={(page) => setFilters((f) => ({ ...f, page }))}
               />
