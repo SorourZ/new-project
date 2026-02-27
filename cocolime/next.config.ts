@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'cdn.cocolime.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: '*.cloudinary.com' },
+      { protocol: 'https', hostname: '*.cloudfront.net' },
     ],
     formats: ['image/avif', 'image/webp'],
   },

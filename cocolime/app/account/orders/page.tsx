@@ -59,7 +59,7 @@ export default function OrdersPage() {
               <div className="flex items-start justify-between flex-wrap gap-4">
                 <div>
                   <p className="text-xs text-stone-400 mb-1">
-                    {new Date(order.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    {new Date(order.created_at).toLocaleDateString('en-SA', { day: 'numeric', month: 'long', year: 'numeric' })}
                   </p>
                   <p className="font-mono text-sm font-semibold text-stone-800">{order.order_number}</p>
                 </div>
