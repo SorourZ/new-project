@@ -16,7 +16,7 @@ npm install
 # Kill any existing Next.js process on port 3000 first
 fuser -k 3000/tcp 2>/dev/null || true
 
-nohup npm run dev -- --hostname 0.0.0.0 > /tmp/nextjs.log 2>&1 &
+NODE_ENV=development nohup npm run dev -- --hostname 0.0.0.0 > /tmp/nextjs.log 2>&1 &
 
 # Wait until the server is ready (up to 30s)
 for i in $(seq 1 30); do
