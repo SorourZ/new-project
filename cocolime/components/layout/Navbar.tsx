@@ -1,17 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ShoppingBag, Heart, User, Search, Menu, X } from 'lucide-react'
 import { useCartStore } from '@/lib/store/cartStore'
 import { useUIStore } from '@/lib/store/uiStore'
 import { cn } from '@/lib/utils/cn'
 import { MegaMenu } from './MegaMenu'
 import { MobileNav } from './MobileNav'
+import { LogoWordmark, LogoCL } from '@/components/ui/Logo'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [megaMenuOpen, setMegaMenuOpen] = useState(false)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const itemCount = useCartStore((s) => s.itemCount())
   const openDrawer = useCartStore((s) => s.openDrawer)
   const { mobileNavOpen, openMobileNav, closeMobileNav, openSearch } = useUIStore()
@@ -21,6 +23,17 @@ export function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  /** Cancel any pending close and show the menu */
+  const openMenu = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setMegaMenuOpen(true)
+  }
+
+  /** Delay close by 120 ms — gives mouse time to travel to the mega menu */
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setMegaMenuOpen(false), 120)
+  }
 
   return (
     <>
@@ -43,24 +56,27 @@ export function Navbar() {
               {mobileNavOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
 
-            {/* Logo */}
-            <Link
-              href="/"
-              className="flex-shrink-0 font-[family-name:var(--font-playfair)] text-2xl font-medium tracking-tight text-stone-900"
-            >
-              Cocolime
+            {/* Logo — wordmark on desktop, CL icon on mobile */}
+            <Link href="/" aria-label="Cocolime – home" className="flex-shrink-0">
+              <span className="hidden lg:block text-xl">
+                <LogoWordmark />
+              </span>
+              <span className="lg:hidden">
+                <LogoCL size={34} />
+              </span>
             </Link>
 
             {/* Desktop nav */}
             <nav
               className="hidden lg:flex items-center gap-1"
-              onMouseLeave={() => setMegaMenuOpen(false)}
+              onMouseLeave={scheduleClose}
+              onMouseEnter={openMenu}
             >
               {NAV_LINKS.map((link) =>
                 link.hasMega ? (
                   <button
                     key={link.label}
-                    onMouseEnter={() => setMegaMenuOpen(true)}
+                    onMouseEnter={openMenu}
                     className="px-4 py-2 text-sm font-medium text-stone-700 hover:text-stone-900 transition-colors relative group"
                   >
                     {link.label}
@@ -70,6 +86,7 @@ export function Navbar() {
                   <Link
                     key={link.label}
                     href={link.href ?? '#'}
+                    onMouseEnter={scheduleClose}
                     className="px-4 py-2 text-sm font-medium text-stone-700 hover:text-stone-900 transition-colors relative group"
                   >
                     {link.label}
@@ -121,9 +138,9 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mega menu */}
+        {/* Mega menu — stays open while hovering nav OR the menu itself */}
         {megaMenuOpen && (
-          <div onMouseEnter={() => setMegaMenuOpen(true)} onMouseLeave={() => setMegaMenuOpen(false)}>
+          <div onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
             <MegaMenu onClose={() => setMegaMenuOpen(false)} />
           </div>
         )}

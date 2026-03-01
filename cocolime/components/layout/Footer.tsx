@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Instagram, Youtube } from 'lucide-react'
+import { LogoWordmark } from '@/components/ui/Logo'
 
 export function Footer() {
   return (
@@ -8,9 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <span className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-white block mb-4">
-              Cocolime
-            </span>
+            <div className="mb-4">
+              <LogoWordmark dark className="text-2xl" />
+            </div>
             <p className="text-sm leading-relaxed text-stone-400 max-w-[240px]">
               Premium beauty, thoughtfully formulated for your most radiant self.
             </p>

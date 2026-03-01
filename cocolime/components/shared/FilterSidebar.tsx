@@ -147,7 +147,7 @@ export function FilterSidebar({ filters, active, onChange }: FilterSidebarProps)
         <div className="grid grid-cols-2 gap-3">
           {[['Min', 'price_min'], ['Max', 'price_max']].map(([label, key]) => (
             <div key={key}>
-              <label className="text-xs text-stone-400 mb-1 block">{label} (£)</label>
+              <label className="text-xs text-stone-400 mb-1 block">{label} (SAR)</label>
               <input
                 type="number"
                 min={0}

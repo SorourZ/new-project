@@ -1,29 +1,60 @@
+/* Fonts — must be first, before all other rules */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
 
 /* Fonts loaded via CDN at runtime — swap these for next/font/google in production */
 /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap'); */
 
 :root {
-  --color-brand-primary:       #C8A882;
-  --color-brand-primary-hover: #b8946c;
-  --color-brand-primary-light: #f0e4d3;
-  --color-brand-secondary:     #1A1A1A;
-  --color-brand-accent:        #F7F0E8;
-  --color-brand-highlight:     #D4956A;
-  --color-brand-muted:         #8B7355;
+  /* ── Brand core ─────────────────────────────────────────── */
+  --color-brand-primary:       #9BCE3A;   /* lime green  */
+  --color-brand-primary-hover: #7aaa28;   /* lime dark   */
+  --color-brand-primary-light: #EEF7D6;   /* lime tint   */
+  --color-brand-secondary:     #111111;   /* near black  */
+  --color-brand-accent:        #F6FAF0;   /* lime wash   */
+  --color-brand-highlight:     #C3F065;   /* lime bright */
+  --color-brand-muted:         #6B8F3A;   /* lime muted  */
 
+  /* ── Neutrals ───────────────────────────────────────────── */
   --color-neutral-0:   #FFFFFF;
-  --color-neutral-50:  #FAFAF9;
-  --color-neutral-100: #F5F4F2;
-  --color-neutral-200: #E8E5E0;
-  --color-neutral-300: #D4D0CA;
-  --color-neutral-400: #A8A39B;
-  --color-neutral-500: #78746C;
-  --color-neutral-600: #57534E;
-  --color-neutral-700: #44403C;
-  --color-neutral-800: #292524;
-  --color-neutral-900: #1C1917;
+  --color-neutral-50:  #FAFAF8;
+  --color-neutral-100: #F4F4F1;
+  --color-neutral-200: #E6E6E0;
+  --color-neutral-300: #D0D0C8;
+  --color-neutral-400: #A4A49C;
+  --color-neutral-500: #74746C;
+  --color-neutral-600: #545450;
+  --color-neutral-700: #3C3C38;
+  --color-neutral-800: #242420;
+  --color-neutral-900: #111111;
 
+  /* ── Category colours ───────────────────────────────────── */
+  --color-cat-skincare-bg:    #E8F5E9;   /* soft mint   */
+  --color-cat-skincare:       #2E7D52;   /* forest green*/
+  --color-cat-skincare-light: #A5D6A7;
+
+  --color-cat-makeup-bg:      #FCE4EC;   /* blush pink  */
+  --color-cat-makeup:         #C2185B;   /* deep rose   */
+  --color-cat-makeup-light:   #F48FB1;
+
+  --color-cat-haircare-bg:    #FFF8E1;   /* warm cream  */
+  --color-cat-haircare:       #B8860B;   /* golden amber*/
+  --color-cat-haircare-light: #FFD54F;
+
+  --color-cat-fragrance-bg:   #EDE7F6;   /* soft lavender*/
+  --color-cat-fragrance:      #6A1B9A;   /* deep violet */
+  --color-cat-fragrance-light:#CE93D8;
+
+  --color-cat-body-bg:        #E0F7FA;   /* aqua wash   */
+  --color-cat-body:           #00838F;   /* teal        */
+  --color-cat-body-light:     #80DEEA;
+
+  --color-cat-gifts-bg:       #FFF3E0;   /* champagne   */
+  --color-cat-gifts:          #E65100;   /* warm orange */
+  --color-cat-gifts-light:    #FFCC80;
+
+  /* ── Semantic ───────────────────────────────────────────── */
   --color-success:       #16A34A;
   --color-success-light: #DCFCE7;
   --color-warning:       #D97706;
@@ -33,9 +64,9 @@
   --color-info:          #2563EB;
   --color-info-light:    #DBEAFE;
 
-  /* Production: use next/font/google or self-hosted fonts for --font-display and --font-body */
-  --font-display: 'Playfair Display', 'Didot', 'Bodoni MT', Georgia, 'Times New Roman', serif;
-  --font-body:    'DM Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Fonts injected via next/font/google CSS variables in layout.tsx */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'Jost', ui-sans-serif, system-ui, sans-serif;
 
   --shadow-card: 0 2px 20px rgba(0,0,0,0.05);
   --shadow-lg:   0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
@@ -51,7 +82,7 @@
 
 @layer base {
   html {
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -60,7 +91,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4 {
@@ -68,6 +99,11 @@
     font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.01em;
+  }
+
+  /* Small UI text — labels, nav links, badges */
+  nav, label, button, input, select, textarea, small, .ui-text {
+    font-family: var(--font-body);
   }
 
   :focus-visible {

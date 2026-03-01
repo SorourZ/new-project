@@ -40,7 +40,7 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <h1 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-6">Profile</h1>
+      <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-6">Profile</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg space-y-5">
         <div className="grid grid-cols-2 gap-4">

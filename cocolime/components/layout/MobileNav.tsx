@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { ChevronDown, X, Heart, User } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
+import { LogoWordmark } from '@/components/ui/Logo'
 
 const NAV_DATA = [
   {
@@ -70,9 +71,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-stone-100">
-          <span className="font-[family-name:var(--font-playfair)] text-xl font-medium">
-            Cocolime
-          </span>
+          <LogoWordmark className="text-lg" />
           <button onClick={onClose} className="p-1 text-stone-500 hover:text-stone-900" aria-label="Close menu">
             <X size={20} />
           </button>

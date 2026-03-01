@@ -6,7 +6,8 @@ import { useQuery } from '@tanstack/react-query'
 import { Heart, Share2, Shield, RefreshCw, Truck } from 'lucide-react'
 import { productsApi } from '@/lib/api/products'
 import { useCart } from '@/lib/hooks/useCart'
-import { formatPrice } from '@/lib/utils/currency'
+import { calculateDiscount } from '@/lib/utils/currency'
+import { SARSymbol } from '@/components/ui/SARSymbol'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
@@ -15,7 +16,7 @@ import { cn } from '@/lib/utils/cn'
 import type { ProductVariant } from '@/types'
 
 const TRUST_BADGES = [
-  { icon: <Truck size={16} />, label: 'Free delivery over £50' },
+  { icon: <Truck size={16} />, label: 'Free delivery over SAR 200' },
   { icon: <RefreshCw size={16} />, label: '30-day returns' },
   { icon: <Shield size={16} />, label: 'Secure checkout' },
 ]
@@ -36,7 +37,6 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const activeVariant = selectedVariant ?? product?.variants[0] ?? null
   const price = activeVariant?.price ?? product?.price ?? 0
   const compareAt = activeVariant?.compare_at_price ?? product?.compare_at_price ?? null
-  const currency = product?.currency ?? 'GBP'
   const inStock = activeVariant?.in_stock ?? product?.in_stock ?? false
 
   const handleAddToCart = () => {
@@ -130,7 +130,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           <p className="text-xs font-semibold tracking-widest uppercase text-stone-400 mb-2">
             {product.brand}
           </p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl text-stone-900 leading-tight mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl text-stone-900 leading-tight mb-4">
             {product.name}
           </h1>
 
@@ -149,10 +149,23 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           )}
 
           {/* Price */}
-          <div className="flex items-baseline gap-3 mb-6">
-            <span className="text-2xl font-semibold text-stone-900">{formatPrice(price, currency)}</span>
+          <div className="flex items-center gap-3 mb-6 flex-wrap">
+            <span className="text-2xl font-semibold text-stone-900 flex items-center gap-1">
+              <SARSymbol size={18} />
+              {(price / 100).toFixed(2)}
+            </span>
             {compareAt && compareAt > price && (
-              <span className="text-base text-stone-400 line-through">{formatPrice(compareAt, currency)}</span>
+              <>
+                <span className="text-base text-stone-400 line-through flex items-center gap-0.5">
+                  <SARSymbol size={14} />
+                  {(compareAt / 100).toFixed(2)}
+                </span>
+                {calculateDiscount(price, compareAt) > 0 && (
+                  <span className="text-sm font-bold px-2.5 py-1 rounded-full bg-pink-500 text-white">
+                    -{calculateDiscount(price, compareAt)}%
+                  </span>
+                )}
+              </>
             )}
           </div>
 
@@ -260,7 +273,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       {/* Description */}
       {product.description && (
         <div className="mt-16 max-w-2xl">
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-4">About this product</h2>
+          <h2 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-4">About this product</h2>
           <div className="prose prose-stone text-stone-600 text-sm leading-relaxed">
             <p>{product.description}</p>
           </div>

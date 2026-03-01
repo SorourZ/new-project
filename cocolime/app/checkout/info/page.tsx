@@ -19,7 +19,7 @@ export default function CheckoutInfoPage() {
   const methods = useForm<CheckoutInfoFormData>({
     resolver: zodResolver(checkoutInfoSchema),
     defaultValues: {
-      shipping_address: { country: 'GB' },
+      shipping_address: { country: 'SA' },
     },
   })
 
@@ -34,8 +34,8 @@ export default function CheckoutInfoPage() {
   return (
     <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="mb-10">
-        <Link href="/" className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-stone-900">
-          Cocolime
+        <Link href="/" className="text-2xl font-medium text-stone-900" style={{ fontFamily: 'var(--font-display)' }}>
+          cocolime
         </Link>
       </div>
 

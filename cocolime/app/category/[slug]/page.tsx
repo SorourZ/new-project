@@ -41,7 +41,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
       <Breadcrumb items={[{ label: categoryName }]} />
 
       <div className="mt-6 mb-8">
-        <h1 className="font-[family-name:var(--font-playfair)] text-4xl text-stone-900 mb-2">{categoryName}</h1>
+        <h1 className="font-[family-name:var(--font-display)] text-4xl text-stone-900 mb-2">{categoryName}</h1>
         {data?.pagination && (
           <p className="text-sm text-stone-400">{data.pagination.total} products</p>
         )}

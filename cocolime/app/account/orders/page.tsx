@@ -32,7 +32,7 @@ export default function OrdersPage() {
   if (isLoading) {
     return (
       <div className="space-y-4">
-        <h1 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-6">Order History</h1>
+        <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-6">Order History</h1>
         {[1,2,3].map(i => <Skeleton key={i} className="h-28 rounded-xl" />)}
       </div>
     )
@@ -42,7 +42,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <h1 className="font-[family-name:var(--font-playfair)] text-2xl text-stone-900 mb-6">Order History</h1>
+      <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-900 mb-6">Order History</h1>
 
       {orders.length === 0 ? (
         <div className="text-center py-16">
@@ -59,7 +59,7 @@ export default function OrdersPage() {
               <div className="flex items-start justify-between flex-wrap gap-4">
                 <div>
                   <p className="text-xs text-stone-400 mb-1">
-                    {new Date(order.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    {new Date(order.created_at).toLocaleDateString('en-SA', { day: 'numeric', month: 'long', year: 'numeric' })}
                   </p>
                   <p className="font-mono text-sm font-semibold text-stone-800">{order.order_number}</p>
                 </div>
