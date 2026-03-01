@@ -16,6 +16,10 @@ npm install
 # Kill any existing Next.js process on port 3000 first
 fuser -k 3000/tcp 2>/dev/null || true
 
+# Clear Turbopack/Next.js build caches so the browser always gets
+# fresh JS after any code changes (prevents stale-bundle blank pages)
+rm -rf .next/cache .next/turbopack 2>/dev/null || true
+
 NODE_ENV=development nohup npm run dev -- --hostname 0.0.0.0 > /tmp/nextjs.log 2>&1 &
 
 # Wait until the server is ready (up to 30s)
